@@ -1,0 +1,25 @@
+.bandCardContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    height: 100vh;
+    width: 100vw;
+}
+
+.backgroundImg {
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.bio {
+    color: white;
+}
+
+.colinCard && .jackCard && .noahCard && .simonCard && .henryCard {
+    position: relative;
+    width: fit-content;
+    overflow: hidden;
+}

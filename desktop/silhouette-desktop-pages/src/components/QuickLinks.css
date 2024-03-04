@@ -1,0 +1,24 @@
+.linksContainer {
+    display: flex;
+    overflow: hidden;
+    flex-direction: column;
+    height: 50vh;
+    width: 100vw;
+    text-align: center;
+    font-size: 5em;
+    text-decoration: underline;
+    color: white;
+    margin: 0 auto;
+}
+
+.linksList {
+    list-style-type: none;
+    cursor: pointer;
+    transform: scale(1.00);
+    transition: all 150ms ease-out;
+}
+
+ul li:hover {
+    transform: scale(1.05);
+    transition: 150ms ease-in;
+}

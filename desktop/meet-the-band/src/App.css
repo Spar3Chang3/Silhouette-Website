@@ -1,3 +1,7 @@
+body {
+    background-color: #161618;
+}
+
 .bandCardContainer {
     display: flex;
     flex-wrap: wrap;
@@ -7,19 +11,69 @@
 }
 
 .backgroundImg {
-    width: 100%;
-    height: 100%;
+    position: absolute;
+    width: inherit;
+    height: inherit;
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
+    border-radius: 10px;
+    transition: 100ms ease-out;
+}
+
+.backgroundImg:hover {
+    filter: blur(5px);
+    transition: 100ms ease-in;
 }
 
 .bio {
+    pointer-events: none;
+    margin: 150px 10px 10px;
+    height: 0;
+    width: 95%;
+    position: relative;
+    font-size: 150%;
     color: white;
+    opacity: 0;
+    text-shadow: 3px 5px 5px black;
+    transition: 250ms ease-in;
 }
 
-.colinCard && .jackCard && .noahCard && .simonCard && .henryCard {
+.fadeIn {
+    opacity: 100%;
+}
+
+.colinCard {
+    width: 480px;
+    height: 720px;
     position: relative;
-    width: fit-content;
-    overflow: hidden;
+    margin: 12px;
+}
+
+.jackCard {
+    width: 480px;
+    height: 720px;
+    position: relative;
+    margin: 12px;
+}
+
+.noahCard {
+    width: 480px;
+    height: 720px;
+    position: relative;
+    margin: 12px;
+}
+
+.simonCard {
+    width: 480px;
+    height: 720px;
+    position: relative;
+    margin: 12px;
+}
+
+.henryCard {
+    width: 480px;
+    height: 720px;
+    position: relative;
+    margin: 12px;
 }

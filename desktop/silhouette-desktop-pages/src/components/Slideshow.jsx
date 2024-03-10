@@ -1,37 +1,35 @@
 import React, { useState, useEffect } from 'react'
 import './Slideshow.css'
 export default function Slideshow() {
-    const imgArray = ["slideshow1.jpg", "slideshow2.jpg"];
+    const slideNum = 2;
     const imgLink = "http://localhost:3000/";
 
-    let slideNum = 1;
-    const [currentSlideLink, setCurrentSlideLink] = useState(imgLink);
+    const [currentSlide, setCurrentSlide] = useState(0);
     const [scrollOpacity, setScrollOpacity] = useState(1);
     const [blurStrength, setBlurStrength] = useState(0);
 
     useEffect (() => {
         const changeSlide = setInterval(() => {
-            slideNum = (slideNum + 1) % imgArray.length;
-            console.log(slideNum);
-            setCurrentSlideLink(imgLink + imgArray[slideNum]);
-            return () => clearInterval(changeSlide);
+            setCurrentSlide(currentSlide => (currentSlide + 1) % slideNum);
         }, 5000);
 
         const scrollDetector = () => {
             const scrollPosition = window.scrollY;
-            const maxScroll = window.innerHeight * 0.65;
+            const maxScroll = window.innerHeight * 0.5;
             setScrollOpacity(1 - Math.min(scrollPosition / maxScroll, 1));
             setBlurStrength(Math.min(scrollPosition / maxScroll, 1) * 50);
-
         };
 
         window.addEventListener('scroll', scrollDetector);
-        return () => window.removeEventListener('scroll', scrollDetector);
+        return () => {
+            window.removeEventListener('scroll', scrollDetector);
+            clearInterval(changeSlide);
+        };
 
     }, []);
 
     const backgroundSlide = {
-        backgroundImage: `url('${currentSlideLink}')`,
+        backgroundImage: `url('${imgLink + `slideshow${currentSlide}.jpg`}')`,
         filter: `blur(${blurStrength}px)`,
     };
 

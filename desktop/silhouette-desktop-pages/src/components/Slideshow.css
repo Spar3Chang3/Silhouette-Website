@@ -4,7 +4,6 @@
     overflow: hidden;
     width: 100vw;
     height: 100vh;
-    align-items: center;
     justify-content: center;
 }
 
@@ -17,7 +16,7 @@
 }
 
 .bandName {
-    margin: 0 auto;
+    margin-top: 45vh;
     font-size: 15em;
     position: absolute;
     color: black;

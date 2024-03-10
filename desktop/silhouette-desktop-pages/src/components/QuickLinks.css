@@ -2,23 +2,36 @@
     display: flex;
     overflow: hidden;
     flex-direction: column;
-    height: 50vh;
+    height: fit-content;
     width: 100vw;
     text-align: center;
-    font-size: 5em;
+    font-size: clamp(2rem, 6rem, 8rem);
     text-decoration: underline;
     color: white;
-    margin: 0 auto;
 }
 
 .linksList {
+    margin-top: 15vh;
     list-style-type: none;
     cursor: pointer;
     transform: scale(1.00);
-    transition: all 150ms ease-out;
+    transition: 150ms ease-out;
+    margin-bottom: 15vh;
 }
 
 ul li:hover {
     transform: scale(1.05);
     transition: 150ms ease-in;
+}
+
+img {
+    height: 200px;
+    width: 200px;
+    cursor: pointer;
+    margin: 50px;
+    font-size: x-large;
+}
+
+a {
+    color: white;
 }

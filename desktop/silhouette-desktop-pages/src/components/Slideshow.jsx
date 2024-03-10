@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import './Slideshow.css'
 export default function Slideshow() {
     const slideNum = 2;
-    const imgLink = "http://localhost:3000/";
+    const imgLink = "https://images.silhouette.band/";
 
     const [currentSlide, setCurrentSlide] = useState(0);
     const [scrollOpacity, setScrollOpacity] = useState(1);

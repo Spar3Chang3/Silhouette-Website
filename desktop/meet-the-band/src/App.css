@@ -77,3 +77,14 @@ body {
     position: relative;
     margin: 12px;
 }
+
+.socials {
+    position: relative;
+    opacity: 0;
+}
+
+img {
+    width: 75px;
+    height: 75px;
+    cursor: pointer;
+}

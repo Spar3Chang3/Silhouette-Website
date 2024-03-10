@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import './Slideshow.css'
 export default function Slideshow() {
-    const imgArray = ["slideshow1.jpg", "slideshow2.png"];
+    const imgArray = ["slideshow1.jpg", "slideshow2.jpg"];
     const imgLink = "http://localhost:3000/";
 
     let slideNum = 1;

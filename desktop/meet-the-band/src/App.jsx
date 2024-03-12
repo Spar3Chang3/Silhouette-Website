@@ -2,7 +2,7 @@ import './App.css'
 import { useState } from 'react'
 
 export default function App() {
-    const imgLink = "http://localhost:3000/";
+    const imgLink = "https://images.silhouette.band/";
 
     const [ colinIsHovered, setColinIsHovered ] = useState(false);
     const colinImgStyle = {
@@ -57,7 +57,7 @@ export default function App() {
                onMouseEnter={() => setJackIsHovered(true)}
                onMouseLeave={() => setJackIsHovered(false)}
           >
-              <div className={"backgroundImg"} style={colinImgStyle}></div>
+              <div className={"backgroundImg"} style={henryImgStyle}></div>
               <div className={`bio ${jackIsHovered ? 'fadeIn' : ''}`}>
                   <h2>Jack Riley</h2>
                   <p></p>
@@ -95,7 +95,7 @@ export default function App() {
                onMouseEnter={() => setSimonIsHovered(true)}
                onMouseLeave={() => setSimonIsHovered(false)}
           >
-              <div className={"backgroundImg"} style={colinImgStyle}></div>
+              <div className={"backgroundImg"} style={noahImgStyle}></div>
               <div className={`bio ${simonIsHovered ? 'fadeIn' : ''}`}>
                   <h2>Simon Lanter</h2>
                   <p></p>

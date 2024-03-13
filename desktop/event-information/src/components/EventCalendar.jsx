@@ -1,7 +1,7 @@
 import { Calendar, momentLocalizer } from 'react-big-calendar';
 import moment from 'moment';
 import { useState } from 'react';
-import './EventCalendar.css';
+import "./EventCalendar.css";
 
 export default function EventCalendar() {
     const localizer = momentLocalizer(moment);
@@ -14,7 +14,7 @@ export default function EventCalendar() {
     ])
 
     return (
-        <>
+        <div className={"calendarContainer"}>
             <Calendar
                 localizer={localizer}
                 events={events}
@@ -22,6 +22,6 @@ export default function EventCalendar() {
                 endAccessor="end"
                 style={{ height: 500 }}
             />
-        </>
+        </div>
     )
 }

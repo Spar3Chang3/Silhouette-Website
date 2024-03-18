@@ -57,7 +57,7 @@ export default function App() {
                onMouseEnter={() => setJackIsHovered(true)}
                onMouseLeave={() => setJackIsHovered(false)}
           >
-              <div className={"backgroundImg"} style={henryImgStyle}></div>
+              <div className={"backgroundImg"} style={jackImgStyle}></div>
               <div className={`bio ${jackIsHovered ? 'fadeIn' : ''}`}>
                   <h2>Jack Riley</h2>
                   <p></p>

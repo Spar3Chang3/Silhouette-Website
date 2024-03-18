@@ -4,19 +4,21 @@
     flex-direction: column;
     height: fit-content;
     width: 100vw;
-    text-align: center;
-    font-size: clamp(2rem, 6rem, 8rem);
+    font-size: clamp(2rem, 4rem, 8vw);
     text-decoration: underline;
+    text-align: center;
     color: white;
+    margin: 0 auto;
 }
 
 .linksList {
     margin-top: 15vh;
+    margin-bottom: 15vh;
+    padding: 10px;
     list-style-type: none;
     cursor: pointer;
     transform: scale(1.00);
     transition: 150ms ease-out;
-    margin-bottom: 15vh;
 }
 
 ul li:hover {
@@ -28,8 +30,8 @@ img {
     height: 200px;
     width: 200px;
     cursor: pointer;
-    margin: 50px;
     font-size: x-large;
+    padding: 15px;
 }
 
 a {

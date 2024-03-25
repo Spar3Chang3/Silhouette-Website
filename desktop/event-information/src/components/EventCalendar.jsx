@@ -13,6 +13,11 @@ export default function EventCalendar() {
         },
     ])
 
+    const calendarStyle = {
+        height: '100vh',
+        width: '100vw',
+    }
+
     return (
         <div className={"calendarContainer"}>
             <Calendar
@@ -20,7 +25,7 @@ export default function EventCalendar() {
                 events={events}
                 startAccessor="start"
                 endAccessor="end"
-                style={{ height: 500 }}
+                style={calendarStyle}
             />
         </div>
     )

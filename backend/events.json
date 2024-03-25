@@ -1,0 +1,12 @@
+{
+  "001": {
+    "day": "01",
+    "month": "29",
+    "year": "2004",
+    "startTime": "7:30",
+    "endTime": "10:30",
+    "entryFee": "$0.00",
+    "location": "Weebles",
+    "directions": "https://maps.google.com"
+  }
+}

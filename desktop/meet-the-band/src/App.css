@@ -3,6 +3,12 @@ body {
     background-color: #161618;
 }
 
+.hoverTip {
+    text-align: center;
+    color: white;
+    font-size: xxx-large;
+}
+
 .bandCardContainer {
     display: flex;
     flex-wrap: wrap;
@@ -94,4 +100,9 @@ img {
     height: 75px;
     margin: 25px;
     cursor: pointer;
+}
+
+br {
+    height: 5px;
+    color: white;
 }

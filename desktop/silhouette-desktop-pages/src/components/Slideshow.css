@@ -18,33 +18,19 @@
     z-index: 0;
 }
 
-.nextSlideImg {
-    position: fixed;
-    opacity: 100%;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    width: 100%;
-    height: 100%;
-    transition: 500ms opacity ease-in;
-    z-index: 0;
-}
-
-.fadeOut {
-    opacity: 0;
-}
-
 .bandName {
     display: flex;
     justify-content: center;
     position: sticky;
     top: 0;
     bottom: 30vh;
-    font-size: clamp(4rem, 15rem, 15vw);
+    margin: 0;
+    font-size: clamp(4.5rem, 15rem, 15vw);
     color: black;
     text-shadow: 5px 5px 6px white;
     transition: 150ms ease-in;
     z-index: 2;
+    pointer-events: none;
 }
 
 .helpArrow {

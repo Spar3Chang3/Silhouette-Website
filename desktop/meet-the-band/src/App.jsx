@@ -34,7 +34,7 @@ export default function App() {
 
     return (
         <>
-            <div className={"hoverTip"}>Hover or tap an image to learn more</div>
+            <div className={"hoverTip"}>Hover or tap on a member to learn more</div>
 
           <div className={"bandCardContainer"}>
               <div className={"colinCard"}
@@ -98,7 +98,7 @@ export default function App() {
                    onMouseEnter={() => setSimonIsHovered(true)}
                    onMouseLeave={() => setSimonIsHovered(false)}
               >
-                  <div className={"backgroundImg"} style={noahImgStyle}></div>
+                  <div className={"backgroundImg"} style={simonImgStyle}></div>
                   <div className={`bio ${simonIsHovered ? 'fadeIn' : ''}`}>
                       <h2>Simon Lanter</h2>
                       <p></p>
@@ -119,7 +119,7 @@ export default function App() {
               >
                   <div className={"backgroundImg"} style={henryImgStyle}></div>
                   <div className={`bio ${henryIsHovered ? 'fadeIn' : ''}`}>
-                      <h2>Henry Shaffer</h2>
+                      <h2>Henry Schafer</h2>
                       <p>Henry Schafer is the bassist, co-founder and co-lyricist for Silhouette. He first picked up the
                           bass in the early years of high school, soon harbouring a fascination with the music of yesteryear
                           and developing an eclectic playing style that would lead to his work in Silhouette. When not

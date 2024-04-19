@@ -1,22 +1,17 @@
 import React, { useState, useEffect } from 'react'
 import './Slideshow.css'
 export default function Slideshow() {
-    const slideNum = 2;
+    const slideNum = 4;
     const imgLink = "https://images.silhouette.band/";
 
     const [currentSlide, setCurrentSlide] = useState(0);
-    const [visible, setIsVisible] = useState(true);
     const [scrollOpacity, setScrollOpacity] = useState(1);
     const [blurStrength, setBlurStrength] = useState(0);
     const [arrowOpacity, setArrowOpacity] = useState(1);
 
     useEffect (() => {
         const changeSlide = setInterval(() => {
-            setTimeout(() => {
-                setCurrentSlide(currentSlide => (currentSlide + 1) % slideNum);
-
-            }, 500)
-            setIsVisible(! visible);
+            setCurrentSlide(currentSlide => (currentSlide + 1) % slideNum);
         }, 5000);
 
         const scrollDetector = () => {
@@ -40,14 +35,9 @@ export default function Slideshow() {
         filter: `blur(${blurStrength}px)`,
     };
 
-    const nextSlideStyle = {
-        backgroundImage: `url('${imgLink + `slideshow${currentSlide}.jpg`}')`,
-        filter: `blur(${blurStrength}px)`,
-    };
-
     const titleStyle = {
         opacity: (1.5 - scrollOpacity),
-        transform: `scale(${blurStrength > 10 ? 0.65 : 1})`,
+        transform: `scale(${blurStrength > 10 ? 0.85 : 1})`,
     };
 
     const helpArrowStyle = {
@@ -57,8 +47,7 @@ export default function Slideshow() {
     return (
         <>
             <div className={"slideshowContainer"}>
-                <div className={`currentSlideImg${visible ? '' : 'fadeOut'}`} style={currentSlideStyle}></div>
-                <div className={`nextSlideImg${visible ? 'fadeOut' : ''}`} style={nextSlideStyle}></div>
+                <div className={`currentSlideImg`} style={currentSlideStyle}></div>
                 <div className={"helpArrow"} style={helpArrowStyle}>↓</div>
             </div>
             <div className={"bandName"} style={titleStyle}>Silhouette</div>

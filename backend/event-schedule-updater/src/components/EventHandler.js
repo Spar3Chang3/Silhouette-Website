@@ -1,4 +1,4 @@
-export function addEvent(hh, mm, MM, DD, YYYY, eventName, eventPrice, eventLocationName, eventLocationLink) {
+export function addEvent(startHour, startMinute, endHour, endMinute, MM, DD, YYYY, eventName, eventLocationName, eventLocationLink, eventPrice, age) {
 
 }
 

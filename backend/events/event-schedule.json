@@ -3,8 +3,9 @@
     "eventName": "name",
     "eventLocationName": "venue name",
     "eventLocationLink": "link here",
-    "time": "hh:mm",
-    "date": "MM/DD/YYYY",
+    "startTime": "hh:mm",
+    "endTime": "hh:mm",
+    "date": "YYYY-MM-DDDD",
     "entryPrice": "$DD.CC",
     "age": "age"
   }

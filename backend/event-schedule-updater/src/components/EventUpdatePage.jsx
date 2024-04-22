@@ -29,6 +29,7 @@ export default function EventUpdatePage() {
                         <span>...leave blank if free...</span>
 
                     </div>
+                    <br/>
                     <div className={"eventLocationName"}>
                         <span>What is the name of the venue?</span>
                         <input/>

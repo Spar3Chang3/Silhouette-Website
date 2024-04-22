@@ -1,0 +1,11 @@
+[
+  {
+    "eventName": "name",
+    "eventLocationName": "venue name",
+    "eventLocationLink": "link here",
+    "time": "hh:mm",
+    "date": "MM/DD/YYYY",
+    "entryPrice": "$DD.CC",
+    "age": "age"
+  }
+]

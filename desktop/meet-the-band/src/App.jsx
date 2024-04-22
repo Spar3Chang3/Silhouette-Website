@@ -62,7 +62,7 @@ export default function App() {
               >
                   <div className={"backgroundImg"} style={jackImgStyle}></div>
                   <div className={`bio ${jackIsHovered ? 'fadeIn' : ''}`}>
-                      <h2>Jack Riley</h2>
+                      <h2>Jack Reilly</h2>
                       <p></p>
                   </div>
                   <div className={`socials ${jackIsHovered ? 'fadeIn' : ''}`}

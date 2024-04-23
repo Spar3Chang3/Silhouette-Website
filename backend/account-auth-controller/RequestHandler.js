@@ -1,30 +1,31 @@
-import { checkPassword } from "./PasswordChecker";
-
-const fs = require('fs');
-const http = require('http');
+import { checkPassword } from "./PasswordChecker.js";
+import http from 'http';
 
 function startHandler() {
     const server = http.createServer((req, res) => {
         if (req.url === "/login") {
-
             switch (req.method) {
                 case 'GET': {
-                    const login = checkPassword(req.auth.username, req.auth.password);
-                    res.writeHead(
-                        (login === '400' ? 400 : 200),
-                        {"Content-Type": "text/plain"}
-                    );
-                    res.end(login);
+                    let credentials = decode(req.headers.authorization);
+                    let login = checkPassword(credentials[0], credentials[1]).then(login => {
+                        res.writeHead(
+                            (login === 400 ? 400 : 200),
+                            {'Authorization': 'Basic' + btoa(login + "")}
+                        );
+                        res.end();
+                        break;
+                    });
+                }
+                case 'PUT': {
+                    //TODO: add account creation
+                    break;
                 }
             }
         }
     });
 }
 
-function validate(username, password) {
-    if (checkPassword(username, password) === '400') {
-        return false;
-    } else {
-        return true;
-    }
+function decode(headerAuthorizationInput) {
+    let decodedHeader = atob(headerAuthorizationInput);
+    return decodedHeader.split(':'); //username, password
 }

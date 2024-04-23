@@ -1,54 +1,57 @@
-const fs = require('fs');
+import fs from "fs";
+
 const filepath = "../accounts/"
 
-export function locate(username) {
-   return ( fs.readFile((`${filepath + username}.json`), (err, data) => {
-        if (err) {
-            console.log("Could not locate file...");
-            return null;
-        } else {
-            return (data);
-        }
-    })
-   );
+export async function locate(username) {
+    try {
+        return await fs.promises.readFile((`${filepath + username}.json`), "utf8");
+    } catch (err) {
+        console.log("FILE NOT FOUND!", err);
+        return null;
+    }
+
 }
 
-function getTokens() {
-    return (
-        fs.readFile((`${filepath}tokens.json`), (err, data) => {
-            if (err) {
-                console.log("Could not locate file...");
-                return null;
+export async function getTokens() {
+    try {
+        return await fs.promises.readFile((`${filepath}tokens.json`), 'utf8');
+    } catch (err) {
+        console.log("Could not locate file for reading tokens...");
+        throw err;
+    }
+}
+
+export function addToken(token) {
+    try {
+        getTokens().then(async data => {
+            let tokens = JSON.parse(data);
+            tokens.push(token);
+            await fs.promises.writeFile(`${filepath}tokens.json`, JSON.stringify(tokens));
+        });
+    } catch (err) {
+        console.log("Could not locate file for adding token...");
+        throw err;
+    }
+}
+
+export function deleteToken(token) {
+    try {
+        getTokens().then(async data => {
+            let tokens = JSON.parse(data);
+            let indexToDelete = tokens.indexOf(token);
+            if (indexToDelete !== -1) {
+                tokens.splice(indexToDelete, 1);
+                await fs.promises.writeFile(`${filepath}tokens.json`, JSON.stringify(tokens));
             } else {
-                return (data);
+                console.log("Token not found for: ", token);
             }
-        })
-    );
-}
-
-//TODO: finish getTokens return method and implement storeToken for tokens.json
-
-export function storeToken(account, token) {
-    if (account !== null) {
-        account.tokens.push(token);
-        fs.writeFile((`${filepath + account.username}.json`), JSON.stringify(account), (err) => {
-            if (err) console.error("Error writing file: ", err);
         });
+    } catch (err) {
+        console.log("Error deleting token: ");
+        throw err;
     }
 }
 
-export function storeToken(token) {
-
-}
-
-export function deleteToken(account, token) {
-    if (account !== null) {
-        account.tokens[account.tokens.findIndex(token)] = "";
-        fs.writeFile((`${filepath + account.username}.json`), JSON.stringify(account), (err) => {
-            if (err) console.error("Error writing file: ", err);
-        });
-    }
-}
 
 export function setName(account, name) {
     if (account !== null) {
@@ -59,11 +62,15 @@ export function setName(account, name) {
     }
 }
 
-export function setPassword(account, hashedPassword) {
-    if (account !== null) {
-        account.password = hashedPassword;
-        fs.writeFile((`${filepath + account.username}.json`), JSON.stringify(account), (err) => {
-            if (err) console.error("Error writing file: ", err);
-        });
+export async function setPassword(account, hashedPassword) {
+    try {
+        if (account !== null && account !== undefined) {
+            account.password = hashedPassword;
+            await fs.promises.writeFile(`${filepath + account.username}.json`, JSON.stringify(account));
+        } else {
+            console.log("Account undefined :(");
+        }
+    } catch (err) {
+        console.error("Problem locating file: ", err);
     }
 }

@@ -1,8 +1,5 @@
 {
-  "name": "user's name",
+  "name": "users name",
   "username": "username",
-  "password": "password",
-  "tokens": [
-
-  ]
+  "password": "password"
 }

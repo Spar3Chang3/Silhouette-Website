@@ -1,7 +1,25 @@
-const apiLink = "";
+const apiLink = "http://localhost:3000/";
 
-export default function EventFetcher(link) {
+export default function EventFetcher() {
+    return (
+        fetch(apiLink)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error("Network response was not ok");
+                }
+                return response.json();
+            })
+            .then(data => {
+                return data;
+            })
+            .catch(error => {
+                console.error('error');
+            })
+    )
+}
 
+export function compileTime(date, time) {
+    return `${date}T${time}`;
 }
 
 export function addEvent(startHour, startMinute, endHour, endMinute, MM, DD, YYYY, eventName, eventLocationName, eventLocationLink, eventPrice, age) {
@@ -19,3 +37,8 @@ export function addEvent(startHour, startMinute, endHour, endMinute, MM, DD, YYY
         age
     }
 }
+
+EventFetcher()
+    .then((data) => {
+        console.log(data);
+    });

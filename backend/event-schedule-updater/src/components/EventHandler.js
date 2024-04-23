@@ -6,3 +6,4 @@ export function getEvents() {
     const apiPath = 'http://192.168.0.245:3000/event-schedule';
 
 }
+

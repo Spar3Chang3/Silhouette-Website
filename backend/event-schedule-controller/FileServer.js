@@ -1,7 +1,7 @@
 const fs = require('fs');
 const http = require('http');
 
-const hostname = "192.168.0.245";
+const hostname = "localhost";
 const port = 3000
 const filepath = "../events/event-schedule.json";
 
@@ -15,7 +15,7 @@ function startServer() {
                             res.writeHead(500, {"Content-Type": "text/plain"});
                             res.end("Server encountered a file reading error");
                         } else {
-                            res.writeHead(200, {"Content-Type": "application/json"});
+                            res.writeHead(200, {"Content-Type": "application/json", "Access-Control-Allow-Origin": "*"});
                             res.end(data);
                         }
                     });

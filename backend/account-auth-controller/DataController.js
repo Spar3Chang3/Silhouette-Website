@@ -13,6 +13,21 @@ export function locate(username) {
    );
 }
 
+function getTokens() {
+    return (
+        fs.readFile((`${filepath}tokens.json`), (err, data) => {
+            if (err) {
+                console.log("Could not locate file...");
+                return null;
+            } else {
+                return (data);
+            }
+        })
+    );
+}
+
+//TODO: finish getTokens return method and implement storeToken for tokens.json
+
 export function storeToken(account, token) {
     if (account !== null) {
         account.tokens.push(token);
@@ -20,6 +35,10 @@ export function storeToken(account, token) {
             if (err) console.error("Error writing file: ", err);
         });
     }
+}
+
+export function storeToken(token) {
+
 }
 
 export function deleteToken(account, token) {

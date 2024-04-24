@@ -1,8 +1,8 @@
-const apiLink = "http://localhost:3000/";
+const eventScheduleLink = "https://events.silhouette.band/event-schedule";
 
 export default function EventFetcher() {
     return (
-        fetch(apiLink)
+        fetch(eventScheduleLink)
             .then(response => {
                 if (!response.ok) {
                     throw new Error("Network response was not ok");

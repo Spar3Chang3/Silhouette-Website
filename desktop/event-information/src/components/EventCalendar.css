@@ -1,4 +1,17 @@
 @charset "UTF-8";
+
+
+.modalContainer {
+    background-color: #373a3c;
+    width: 50%;
+    height: 50%;
+    font-size: xxx-large;
+    color: #1a1a1a;
+}
+
+
+
+
 .rbc-btn {
     color: inherit;
     font: inherit;

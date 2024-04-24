@@ -2,7 +2,7 @@ import { Calendar, momentLocalizer } from 'react-big-calendar';
 import moment from 'moment';
 import { useState, useEffect } from 'react';
 import "./EventCalendar.css";
-import EventFetcher, { compileTime } from "./EventFetcher.js";
+import EventFetcher, { compileTime } from "../../../event-schedule/src/components/EventFetcher.js";
 import Modal from 'react-modal';
 import EventDescription from "./EventDescription.jsx";
 

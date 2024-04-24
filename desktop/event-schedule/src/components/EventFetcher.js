@@ -1,6 +1,6 @@
 const eventScheduleLink = "https://events.silhouette.band/event-schedule";
 
-export async function EventFetcher() {
+export default function EventFetcher() {
     return (
         fetch(eventScheduleLink)
             .then(response => {
@@ -15,7 +15,7 @@ export async function EventFetcher() {
             .catch(error => {
                 console.error('error');
             })
-    );
+    )
 }
 
 export function compileTime(date, time) {

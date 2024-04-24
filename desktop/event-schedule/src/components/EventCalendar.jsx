@@ -1,15 +1,39 @@
 import './EventCalendar.css';
 import {useState, useEffect} from "react";
+import * as ef from './EventFetcher.js';
+import EventFetcher from "./EventFetcher.js";
 
 export default function EventCalendar() {
 
     const [selectedEvent, setSelectedEvent] = useState(null);
+    const [formattedEvents, setFormattedEvents] = useState([])
+
+
+    useEffect(() => {
+        EventFetcher().then(data => {
+            const eventList = data.map(event => ({
+                eventName: event.eventName,
+                eventLocation: event.eventLocationLink,
+                eventLocationLink: event.eventLocationLink,
+                startTime: event.startTime,
+                endTime: event.endTime,
+                date: event.date,
+                entryPrice: event.entryPrice,
+                age: event.age
+            }));
+            setFormattedEvents(eventList);
+        })
+    }, []);
+
+    console.log(formattedEvents);
+
+
 
     return (
         <>
             <div className={"eventCalendarContainer"}>
                 <div className={"dayContainer"}>
-                    <Event eventName={"Test"}/>
+                    {Event(1)}
                 </div>
                 <div className={"descriptionContainer"}>
                     <DisplayEvent/>
@@ -19,11 +43,11 @@ export default function EventCalendar() {
     )
 
 
-    function Event(eventName, eventLocation, eventLocationLink, startTime, endTime, date, entryPrice, age) {
+    function Event(formattedEventsIndex) {
         return (
             <button className={"day"}
-                    onClick={setSelectedEvent("hi!")}
-            >{date}</button>
+                    onClick={() => setSelectedEvent(formattedEvents[formattedEventsIndex])}
+            >{formattedEvents[formattedEventsIndex].date}</button>
         )
     }
 

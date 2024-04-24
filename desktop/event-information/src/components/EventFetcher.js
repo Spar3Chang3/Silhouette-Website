@@ -7,10 +7,10 @@ export default function EventFetcher() {
                 if (!response.ok) {
                     throw new Error("Network response was not ok");
                 }
-                return response.json();
+                return response;
             })
             .then(data => {
-                return data;
+                return data.json();
             })
             .catch(error => {
                 console.error('error');

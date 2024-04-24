@@ -1,0 +1,32 @@
+:root {
+    --width: 100vh/7;
+    --height: 100vh/5;
+}
+
+.eventCalendarContainer {
+    height: 100vh;
+    width: 100vh;
+    justify-items: center;
+}
+
+.calendarToolbar {
+    height: 5vh;
+}
+
+.dayContainer {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100vw;
+    height: 100vh;
+    justify-content: space-evenly;
+}
+
+.day {
+    position: relative;
+    width: 12%;
+    height: 15%;
+    background-color: #161618;
+    border-radius: 15px;
+    padding: 10px;
+    border: 1px dotted white;
+}

@@ -6,8 +6,18 @@
     "startTime": "hh:mm",
     "endTime": "hh:mm",
     "date": "YYYY-MM-DD",
-    "entryPrice": "$DD.CC",
+    "entryPrice": "$dd.cc, Free",
     "age": "age"
+  },
+  {
+    "eventName": "Opening for The Black Moods",
+    "eventLocationName": "the stadium",
+    "eventLocationLink": "",
+    "startTime": "",
+    "endTime": "",
+    "date": "",
+    "entryPrice": "",
+    "age": ""
   },
   {
     "eventName": "Concert",
@@ -16,7 +26,7 @@
     "startTime": "18:00",
     "endTime": "19:00",
     "date": "2024-04-22",
-    "entryPrice": "$00.00",
+    "entryPrice": "Free",
     "age": "Open to All"
   }
 ]

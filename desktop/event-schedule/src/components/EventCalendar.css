@@ -9,6 +9,11 @@
     justify-items: center;
 }
 
+.descriptionContainer {
+    width: 50vw;
+    color: white;
+}
+
 .calendarToolbar {
     height: 5vh;
 }
@@ -16,7 +21,7 @@
 .dayContainer {
     display: flex;
     flex-wrap: wrap;
-    width: 100vw;
+    width: 50vw;
     height: 100vh;
     justify-content: space-evenly;
 }

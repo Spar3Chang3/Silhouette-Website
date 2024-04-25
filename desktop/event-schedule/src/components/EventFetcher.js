@@ -1,6 +1,6 @@
 const eventScheduleLink = "https://events.silhouette.band/event-schedule";
 
-export default function EventFetcher() {
+export default async function EventFetcher() {
     return (
         fetch(eventScheduleLink)
             .then(response => {
@@ -18,10 +18,6 @@ export default function EventFetcher() {
     )
 }
 
-export function compileTime(date, time) {
-    return `${date}T${time}`;
-}
-
 export function addEvent(startHour, startMinute, endHour, endMinute, MM, DD, YYYY, eventName, eventLocationName, eventLocationLink, eventPrice, age) {
     const startTime = `${startHour}:${startMinute}`;
     const endTime = `${endHour}:${endMinute}`;
@@ -37,8 +33,3 @@ export function addEvent(startHour, startMinute, endHour, endMinute, MM, DD, YYY
         age
     }
 }
-
-EventFetcher()
-    .then((data) => {
-        console.log(data);
-    });

@@ -8,24 +8,12 @@ export default function EventCalendar() {
     const [selectedEvent, setSelectedEvent] = useState(null);
     const [formattedEvents, setFormattedEvents] = useState([])
 
-
     useEffect(() => {
-        EventFetcher().then(data => {
-            const eventList = data.map(event => ({
-                eventName: event.eventName,
-                eventLocation: event.eventLocationLink,
-                eventLocationLink: event.eventLocationLink,
-                startTime: event.startTime,
-                endTime: event.endTime,
-                date: event.date,
-                entryPrice: event.entryPrice,
-                age: event.age
-            }));
-            setFormattedEvents(eventList);
-        })
+        EventFetcher()
+            .then(data => {
+                setFormattedEvents(data);
+            })
     }, []);
-
-    console.log(formattedEvents);
 
 
 
@@ -33,10 +21,10 @@ export default function EventCalendar() {
         <>
             <div className={"eventCalendarContainer"}>
                 <div className={"dayContainer"}>
-                    {Event(1)}
+                    {formattedEvents.map((event, index) => (Event(index)))}
                 </div>
                 <div className={"descriptionContainer"}>
-                    <DisplayEvent/>
+                    {selectedEvent}
                 </div>
             </div>
         </>
@@ -46,21 +34,31 @@ export default function EventCalendar() {
     function Event(formattedEventsIndex) {
         return (
             <button className={"day"}
-                    onClick={() => setSelectedEvent(formattedEvents[formattedEventsIndex])}
-            >{formattedEvents[formattedEventsIndex].date}</button>
+                    onClick={() => DisplayEvent(formattedEventsIndex)}
+            >{formattedEvents[formattedEventsIndex].eventName}</button>
         )
     }
 
-    function DisplayEvent() {
-        return (
+    function DisplayEvent(formattedEventsIndex) {
+        const start = new Date(compileTime(formattedEvents[formattedEventsIndex].date, formattedEvents[formattedEventsIndex].startTime));
+        const end = new Date(compileTime(formattedEvents[formattedEventsIndex].date, formattedEvents[formattedEventsIndex].endTime));
+        setSelectedEvent(
             <div className={"description"}>
-                <h2>{selectedEvent.eventName}</h2>
-                <span>Location: <a href={selectedEvent.eventLocationLink}>{selectedEvent.eventLocationName}</a></span>
-                <span>Start Time: {selectedEvent.startTime}</span>
-                <span>End Time: {selectedEvent.endTime}</span>
-                <span>Entry Price: {selectedEvent.entryPrice}</span>
-                <span>Required Age: {selectedEvent.age}</span>
+                <h2>{formattedEvents[formattedEventsIndex].eventName}</h2>
+                <div className={"descriptionInfo"}>
+                    <span>Location: <a
+                        href={formattedEvents[formattedEventsIndex].eventLocationLink}>{formattedEvents[formattedEventsIndex].eventLocationName}</a></span>
+                    <span>Date: {start.getDate()}</span>
+                    <span>Start: {start.getHours()}</span>
+                    <span>End: {end.getTime().toString()}</span>
+                    <span>Price: {formattedEvents[formattedEventsIndex].entryPrice}</span>
+                    <span>Age Limit: {formattedEvents[formattedEventsIndex].age}</span>
+                </div>
             </div>
-        )
+        );
+    }
+
+    function compileTime(date, time) {
+        return `${date}T${time}`;
     }
 }

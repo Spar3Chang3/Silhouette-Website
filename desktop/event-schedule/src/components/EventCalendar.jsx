@@ -1,6 +1,5 @@
 import './EventCalendar.css';
-import {useState, useEffect} from "react";
-import * as ef from './EventFetcher.js';
+import { useState, useEffect } from "react";
 import EventFetcher from "./EventFetcher.js";
 
 export default function EventCalendar() {
@@ -19,6 +18,10 @@ export default function EventCalendar() {
 
     return (
         <>
+            <div className={"promptText"}>
+                <h2>Select an Event: </h2>
+                <h2>Description: </h2>
+            </div>
             <div className={"eventCalendarContainer"}>
                 <div className={"dayContainer"}>
                     {formattedEvents.map((event, index) => (Event(index)))}
@@ -32,33 +35,56 @@ export default function EventCalendar() {
 
 
     function Event(formattedEventsIndex) {
+        const date = new Date(formattedEvents[formattedEventsIndex].date);
         return (
             <button className={"day"}
                     onClick={() => DisplayEvent(formattedEventsIndex)}
-            >{formattedEvents[formattedEventsIndex].eventName}</button>
+            >{date.toLocaleDateString('en-US', {month: 'short', day: 'numeric', year: 'numeric'})}</button>
         )
     }
 
     function DisplayEvent(formattedEventsIndex) {
-        const start = new Date(compileTime(formattedEvents[formattedEventsIndex].date, formattedEvents[formattedEventsIndex].startTime));
-        const end = new Date(compileTime(formattedEvents[formattedEventsIndex].date, formattedEvents[formattedEventsIndex].endTime));
+        const start = new Date(compileDate(formattedEvents[formattedEventsIndex].date, formattedEvents[formattedEventsIndex].startTime));
+        const end = new Date(compileDate(formattedEvents[formattedEventsIndex].date, formattedEvents[formattedEventsIndex].endTime));
         setSelectedEvent(
             <div className={"description"}>
                 <h2>{formattedEvents[formattedEventsIndex].eventName}</h2>
+                <br/>
                 <div className={"descriptionInfo"}>
-                    <span>Location: <a
-                        href={formattedEvents[formattedEventsIndex].eventLocationLink}>{formattedEvents[formattedEventsIndex].eventLocationName}</a></span>
-                    <span>Date: {start.getDate()}</span>
-                    <span>Start: {start.getHours()}</span>
-                    <span>End: {end.getTime().toString()}</span>
-                    <span>Price: {formattedEvents[formattedEventsIndex].entryPrice}</span>
-                    <span>Age Limit: {formattedEvents[formattedEventsIndex].age}</span>
+                    <div className={"info"}>
+                        <b>Location: </b>
+                        <a
+                            href={formattedEvents[formattedEventsIndex].eventLocationLink} className={"tab"} target={"_blank"}
+                        >{formattedEvents[formattedEventsIndex].eventLocationName} &#8599;</a>
+                    </div>
+                    <div className={"info"}>
+                        <b>Date: </b>
+                        <span>{start.toLocaleDateString('en-US', {month: 'short', day: 'numeric', year: 'numeric'})}</span>
+                    </div>
+                    <div className={"info"}>
+                        <b>Time: </b>
+                        <span>{compileTime(start, end)}</span>
+                    </div>
+                    <div className={"info"}>
+                        <b>Price: </b>
+                        <span>{formattedEvents[formattedEventsIndex].entryPrice}</span>
+                    </div>
+                    <div className={"info"}>
+                        <b>Age Limit: </b>
+                        <span>{formattedEvents[formattedEventsIndex].age}</span>
+                    </div>
                 </div>
             </div>
         );
     }
 
-    function compileTime(date, time) {
+    function compileTime(startTime, endTime) {
+        return `${startTime.toLocaleTimeString([], 
+            {hour: '2-digit', minute: '2-digit', hour12: true})} - ${endTime.toLocaleTimeString([], 
+            {hour: '2-digit', minute: '2-digit', hour12: true, timeZone: 'America/Chicago'})}`;
+    }
+
+    function compileDate(date, time) {
         return `${date}T${time}`;
     }
 }

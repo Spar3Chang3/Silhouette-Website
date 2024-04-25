@@ -35,7 +35,7 @@ export default function EventCalendar() {
 
 
     function Event(formattedEventsIndex) {
-        const date = new Date(formattedEvents[formattedEventsIndex].date);
+        const date = new Date(compileDate(formattedEvents[formattedEventsIndex].date, formattedEvents[formattedEventsIndex].endTime));
         return (
             <button className={"day"}
                     onClick={() => DisplayEvent(formattedEventsIndex)}

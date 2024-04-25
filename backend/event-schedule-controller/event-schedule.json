@@ -1,8 +1,8 @@
 [
   {
-    "eventName": "name",
+    "eventName": "Event Template",
     "eventLocationName": "venue name",
-    "eventLocationLink": "link here",
+    "eventLocationLink": "Google maps link",
     "startTime": "hh:mm",
     "endTime": "hh:mm",
     "date": "YYYY-MM-DD",
@@ -11,22 +11,42 @@
   },
   {
     "eventName": "Vietnam Veterans Vigil Gathering",
-    "eventLocationName": "Northenders VFW",
-    "eventLocationLink": "",
+    "eventLocationName": "Northender's VFW",
+    "eventLocationLink": "https://www.google.com/maps/place/Veterans+of+Foreign+Wars/@39.8328139,-89.6092,17z/data=!3m1!4b1!4m6!3m5!1s0x887530bdff76c7e5:0xe58df916b8963a01!8m2!3d39.8328139!4d-89.6066251!16s%2Fg%2F1thxrd16?entry=ttu",
     "startTime": "19:00",
     "endTime": "22:00",
     "date": "2024-05-04",
-    "entryPrice": "$0.00",
+    "entryPrice": "Free",
     "age": "Open to All"
   },
   {
-    "eventName": "Concert",
-    "eventLocationName": "Mowies Cue",
-    "eventLocationLink": "https://www.google.com/maps/place/Mowie's+Cue/@39.7144827,-89.6402742,17z/data=!3m1!4b1!4m6!3m5!1s0x88753ebd4dabdcd1:0xe74ce6ab5fdaaa9b!8m2!3d39.7144827!4d-89.6376993!16s%2Fg%2F1tngr0z1?entry=ttu",
-    "startTime": "18:00",
-    "endTime": "19:00",
-    "date": "2024-04-22",
-    "entryPrice": "$00.00",
+    "eventName": "Opening for The Black Moods",
+    "eventLocationName": "The Stadium Smokehouse",
+    "eventLocationLink": "https://maps.app.goo.gl/qo21ZG5YGbU9KQMH8",
+    "startTime": "19:00",
+    "endTime": "00:00",
+    "date": "2024-06-22",
+    "entryPrice": "Free",
+    "age": "Open to All"
+  },
+  {
+    "eventName": "Playing for the Blue Grouch",
+    "eventLocationName": "The Blue Grouch Pub",
+    "eventLocationLink": "https://maps.app.goo.gl/a7izBPKZoXvBWwyF7",
+    "startTime": "19:00",
+    "endTime": "22:00",
+    "date": "2024-06-28",
+    "entryPrice": "Free",
+    "age": "Open to All"
+  },
+  {
+    "eventName": "Weebles' Waves",
+    "eventLocationName": "Weebles Barr & Grill",
+    "eventLocationLink": "https://maps.app.goo.gl/mvVdH7E9iejzpBKbA",
+    "startTime": "19:00",
+    "endTime": "23:00",
+    "date": "2024-08-17",
+    "entryPrice": "Free",
     "age": "Open to All"
   }
 ]

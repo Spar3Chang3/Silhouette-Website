@@ -1,0 +1,7 @@
+{
+  "dependencies": {
+    "express": "^4.19.2",
+    "https": "^1.0.0",
+    "is-mobile": "^4.0.0"
+  }
+}

@@ -1,0 +1,58 @@
+.slideshowContainer {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    justify-content: center;
+    z-index: 0;
+}
+
+.bandTitle {
+    display: flex;
+    position: sticky;
+    top: 0;
+    bottom: 30vh;
+    margin: 0 auto;
+    pointer-events: none;
+    overflow: visible;
+    z-index: 2;
+}
+
+.bandTitle h2 {
+    font-size: clamp(4.5rem, 15rem, 15vw);
+    color: black;
+    text-shadow: 5px 5px 6px white;
+}
+
+.slideImage {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    opacity: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    pointer-events: none;
+    transition: 500ms ease;
+    z-index: 0;
+}
+
+.promptArrow {
+    margin-top: 90vh;
+    font-size: 2.5rem;
+    position: absolute;
+    color: white;
+    animation: arrowAnimation 5s infinite ease;
+}
+
+@keyframes arrowAnimation {
+    0% {
+        transform: translate(0, -2vh);
+    }
+    50% {
+        transform: translate(0, 2vh);
+    }
+    100% {
+        transform: translate(0, -2vh);
+    }
+}

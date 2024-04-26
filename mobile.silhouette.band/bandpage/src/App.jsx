@@ -39,7 +39,7 @@ export default function App() {
 
     return (
         <>
-            <div className={"hoverTip"}>Hover on a member to learn more</div>
+            <div className={"hoverTip"}>Tap on a member to learn more</div>
 
             <div className={"bandCardContainer"}>
                 <div className={"bandMemberCard"}

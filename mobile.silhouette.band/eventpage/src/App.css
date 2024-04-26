@@ -1,0 +1,82 @@
+@font-face {
+    font-family: 'silhouette';
+    src: url("./assets/silhouette.ttf") format('truetype');
+}
+
+body {
+    margin: 0 auto;
+    background-image: url('./assets/graffiti.png');
+    background-repeat: repeat;
+    font-family: sans-serif;
+    max-height: fit-content;
+}
+
+.eventDropdown {
+    display: flex;
+    flex-direction: column;
+    height: fit-content;
+    width: 100vw;
+    overflow: scroll;
+    align-items: center;
+}
+
+.event {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    position: relative;
+    width: 80vw;
+    margin-top: 10px;
+    background-color: #1a1a1a;
+    border-radius: 25px;
+    transition: ease;
+    overflow: hidden;
+    color: white;
+    border: 1px dashed white;
+    justify-content: flex-start;
+}
+
+.dropdownButton {
+    height: 15vh;
+    width: 80vw;
+    border-radius: 25px;
+    border: none;
+    background-color: transparent;
+    color: white;
+    text-align: center;
+    font-size: xx-large;
+    font-family: silhouette, sans-serif;
+}
+
+.closedView {
+    font-size: xxx-large;
+}
+
+.description {
+    display: flex;
+    flex-direction: column;
+    color: white;
+    align-items: center;
+    height: fit-content;
+}
+
+.descriptionInfo {
+    width: 100%;
+    margin-left: 5%;
+    margin-right: 5%;
+    font-size: medium;
+}
+
+.info {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    margin: 5%;
+    justify-content: space-between;
+    border-bottom: 2px white dotted;
+}
+
+.info a {
+    text-decoration: none;
+    color: #3b99fc;
+}

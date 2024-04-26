@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 
 export default function App() {
     const slideNum = 4;
-    const imageLink = "https://images.silhouette.band/desktop/"
+    const imageLink = "https://images.silhouette.band/mobile/"
 
     const [ currentSlide, setCurrentSlide ] = useState(0);
     const [ slideOpacity, setSlideOpacity ] = useState(1);
@@ -72,10 +72,10 @@ export default function App() {
                         <h2>Silhouette</h2>
                     </div>
                     <div className={"redirects"}>
-                        <a href={"https://desktop.silhouette.band/events/"}>
+                        <a href={"https://mobile.silhouette.band/events/"}>
                             <button>View Upcoming Events</button>
                         </a>
-                        <a href={"https://desktop.silhouette.band/members/"}>
+                        <a href={"https://mobile.silhouette.band/members/"}>
                             <button>Meet the Band</button>
                         </a>
                         <a href={"mailto:contact@silhouette.band"}>
@@ -95,7 +95,7 @@ export default function App() {
                     </div>
                     <div className={"mobileLink"}>
                         Looking for
-                        <a href={"https://mobile.silhouette.band/"}> Mobile</a>
+                        <a href={"https://desktop.silhouette.band/"}> Desktop</a>
                         ?
                     </div>
                 </div>

@@ -18,14 +18,16 @@ body {
   align-content: center;
   text-shadow: 10px 15px black;
   color: white;
-  font-size: xxx-large;
+  font-size: x-large;
   background-color: rgba(255, 255, 255, 10%);
 }
 
 .bandCardContainer {
   display: flex;
+  flex-direction: column;
   flex-wrap: wrap;
   justify-content: space-evenly;
+  align-content: center;
   height: fit-content;
   width: 100vw;
 }
@@ -47,7 +49,7 @@ body {
   pointer-events: none;
   margin: 150px 10px 10px;
   position: relative;
-  font-size: 150%;
+  font-size: large;
   color: white;
   opacity: 0;
   text-shadow: 3px 5px 5px black;
@@ -59,10 +61,10 @@ body {
 }
 
 .bandMemberCard {
-  width: 25vw;
+  width: 90vw;
   height: 80vh;
   position: relative;
-  margin: 10px;
+  margin-top: 25px;
 }
 
 .bandMemberCard p {

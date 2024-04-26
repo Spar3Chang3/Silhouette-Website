@@ -34,7 +34,7 @@ body {
 }
 
 .bandTitle {
-  font-size: clamp(4rem, 8rem, 15vw);
+  font-size: clamp(3rem, 6rem, 8vw);
   color: black;
   text-shadow: 5px 5px 6px white;
   transition: ease;
@@ -46,8 +46,7 @@ body {
   justify-content: center;
   color: white;
   text-shadow: 10px 50px 10px black;
-  font-size: clamp(4.5rem, 10rem, 12vw);
-  margin-bottom: -5%;
+  font-size: xx-large;
   font-family: silhouette, sans-serif;
   pointer-events: none;
   z-index: 2;
@@ -69,8 +68,8 @@ body {
 .redirects button {
   height: 8vh;
   width: 80vw;
-  background-color: rgba(255, 255, 255, 5%);
-  font-size: clamp(3rem, 4rem, 6vw);
+  background-color: rgba(255, 255, 255, 10%);
+  font-size: x-large;
   color: white;
   margin-bottom: 10px;
   border: none;
@@ -96,7 +95,7 @@ body {
   display: flex;
   flex-direction: row;
   height: fit-content;
-  width: 50vw;
+  width: 80vw;
   margin-top: 5vh;
   justify-content: space-evenly;
   align-items: center;
